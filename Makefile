@@ -4,26 +4,27 @@ NAMESV = server
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
 LIBFT = ./libft.a
+PRINTF = ./libftprintf.a
 
 SRCCL = client.c
 SRCSV = server.c
 
-OBJCL = $(SRCCL.c=.o)
-OBJSV = $(SRCSV.c=.o)
+OBJCL = $(SRCCL:.c=.o)
+OBJSV = $(SRCSV:.c=.o)
 
 all : $(NAME) $(NAMESV)
 
 $(NAME) : $(OBJCL)
-    $(CC) $(CFLAGS) $(OBJCL) $(LIBFT) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJCL) $(LIBFT) $(PRINTF) -o $(NAME)
 
 $(NAMESV) : $(OBJSV)
-    $(CC) $(CFLAGS) $(OBJSV) $(LIBFT) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJSV) $(LIBFT) $(PRINTF) -o $(NAMESV)
 
 clean :
-    rm -f $(OBJCL) $(OBJSV)
+	rm -f $(OBJCL) $(OBJSV)
 
 fclean : clean
-    rm -f $(NAME) $(NAMESV)
+	rm -f $(NAME) $(NAMESV)
 
 re : fclean all
 
