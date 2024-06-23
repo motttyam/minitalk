@@ -3,8 +3,8 @@ NAMESV = server
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
-LIBFT = ./libft.a
-PRINTF = ./libftprintf.a
+LIBFT = lib/libft.a
+PRINTF = lib/libftprintf.a
 
 SRCCL = client.c
 SRCSV = server.c
