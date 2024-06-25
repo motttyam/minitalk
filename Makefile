@@ -7,6 +7,8 @@ LIBFT = lib/libft.a
 PRINTF = lib/libftprintf.a
 
 SRCCL = client.c
+SRCCL = client.c
+SRCSV = server.c
 SRCSV = server.c
 
 OBJCL = $(SRCCL:.c=.o)
