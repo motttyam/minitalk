@@ -6,7 +6,7 @@
 /*   By: ktsukamo <ktsukamo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 21:19:59 by ktsukamo          #+#    #+#             */
-/*   Updated: 2024/06/28 00:16:53 by ktsukamo         ###   ########.fr       */
+/*   Updated: 2024/06/28 00:30:54 by ktsukamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,12 @@ void	send_char(pid_t pid, char c)
 		usleep(100);
 		i--;
 	}
-	
 }
 
-void die(int sig)
+void	die(int sig)
 {
 	if (sig == SIGUSR1)
-	ft_putendl_fd("Your message was successfully sent", 1);
+		ft_putendl_fd("Your message was successfully sent", 1);
 	exit(0);
 }
 
