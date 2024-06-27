@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktsukamo <ktsukamo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ktsukamo <ktsukamo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 21:19:59 by ktsukamo          #+#    #+#             */
-/*   Updated: 2024/06/23 22:34:17 by ktsukamo         ###   ########.fr       */
+/*   Updated: 2024/06/28 00:16:53 by ktsukamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,14 @@ void	send_char(pid_t pid, char c)
 		usleep(100);
 		i--;
 	}
-	return ;
+	
+}
+
+void die(int sig)
+{
+	if (sig == SIGUSR1)
+	ft_putendl_fd("Your message was successfully sent", 1);
+	exit(0);
 }
 
 int	main(int argc, char *argv[])
@@ -41,10 +48,12 @@ int	main(int argc, char *argv[])
 	}
 	server_pid = ft_atoi(argv[1]);
 	i = 0;
-	while (i < (int)ft_strlen(argv[2]))
+	signal(SIGUSR1, die);
+	while (i - 1 < (int)ft_strlen(argv[2]))
 	{
 		send_char(server_pid, argv[2][i]);
 		i++;
 	}
+	pause();
 	return (0);
 }
