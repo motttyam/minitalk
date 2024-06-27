@@ -6,7 +6,7 @@
 /*   By: ktsukamo <ktsukamo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 21:19:59 by ktsukamo          #+#    #+#             */
-/*   Updated: 2024/06/28 00:30:54 by ktsukamo         ###   ########.fr       */
+/*   Updated: 2024/06/28 00:38:12 by ktsukamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ void	die(int sig)
 
 int	main(int argc, char *argv[])
 {
-	int i;
-	pid_t server_pid;
+	int		i;
+	pid_t	server_pid;
 
 	if (argc != 3)
 	{
